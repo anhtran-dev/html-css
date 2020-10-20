@@ -1,0 +1,53 @@
+/*Bài 39: Nắm vững kiến thức về type selectors*/
+
+ul > li:first-of-type{
+    color: red;
+}
+ul > li:last-of-type{
+    color: #500eff;
+}
+
+/*Bài 40: Thành thạo combinators trong CSS*/
+
+/*trỏ sau thẻ đứng sau liền kề
+h3
+.title
+.title2
+*/
+
+h3 + .title{
+    color: green;
+}
+/*!*trỏ sau thẻ đứng sau nhưng không liền kề*/
+h3 ~ .title2{
+    color: red;
+}
+
+/*Bài 41: Tìm hiểu thêm các selectors nâng cao*/
+
+/*bắt đầu bằng*/
+a[href^= 'https' ]{
+     color: red;
+}
+/*kết thúc bằng*/
+a[href$= ".vn"]{
+    color: blue;
+}
+/*có chứa*/
+a[href*= "www"]{
+    color: blue;
+}
+/*tìm chính xác*/
+a[href= "abc"]{
+    color: #2451cf;
+}
+ /*kí tự đầu tiên*/
+p::first-letter{
+    font-size: 20px;
+    color: red;
+}
+ /*dòng dầu tiên*/
+p::first-line{
+    font-size: 10px;
+    color: blue;
+}

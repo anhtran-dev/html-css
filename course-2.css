@@ -1,0 +1,59 @@
+/*Bài 36: Sử dụng biến trong CSS như thế nào?*/
+
+:root{
+    /*use global*/
+    --primary-color : #s451cf;
+    --secondary-color : #000345;
+}
+
+.title{
+    color: var(--primary-color);
+}
+/*use local -- được ưu tiên hơn*/
+.box{
+    --primary-color: #7cff55;
+    background: var(--primary-color);
+}
+
+/*Bài 37: Hiểu rõ về độ ưu tiên trong CSS, xác định độ ưu tiên trong CSS đơn giản với VSCode*/
+
+/*Bài 38: Nắm vững kiến thức về child selectors*/
+
+/*phần tử đầu tiên*/
+ul > li:first-child{
+    color: red;
+}
+/*phần tử cuối cùng*/
+ul > li:last-child{
+    color: blue;
+}
+
+/*phần tử n : vd : 2*/
+ul > li:nth-child(2){
+    color: orange;
+}
+/*phần tử kế cuối*/
+ul > li:nth-last-child(2){
+    color: #801d68;
+}
+/*tất cả phần tử trừ phần tử đầu tiên - cuối cùng , ..*/
+ul > li:not(:first-child){
+    color: #a01fff;
+}
+ul > li:not(:last-child){
+     color: #10ffd1;
+}
+
+/*phần tử chẵn lẽ ,..*/
+ul > li:nth-child(even){
+    color: #06ffed;
+}
+ul > li:nth-child(odd){
+    color: #06ffed;
+}
+ul > li:nth-child(2n){
+    color: #c3ffa2;
+}
+ul > li:nth-child(2n + 1){
+    color: #607bff;
+}
