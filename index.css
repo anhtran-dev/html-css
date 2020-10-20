@@ -1,0 +1,115 @@
+/*Bài 26. Các thuộc tính liên quan đến font */
+.font{
+    line-height : 1.5;
+    /*căn chữ*/
+    text-align : center ;
+    /*khoảng cách giữa các kí tự*/
+    letter-spacing :  1px;
+    /*khoảng cách giữa các từ*/
+    word-spacing : 5px;
+    /*luôn hiển thị trên một dòng*/
+    white-space : nowrap;
+
+    /* nếu đoạn văn dài thì hiển thị dấu ...*/
+    display: -webkit-box;
+    overflow :  hidden;
+    text-overflow : ellipsis;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp : 2 ;
+
+    /*đoạn văn dài quá thì xuống dòng*/
+    word-break: break-all;
+    /*word-break: break-word;*/
+}
+
+/*Bài 27: Tìm hiểu thuộc tính cho hình ảnh*/
+/*// Cách center với thẻ inline img, ..*/
+.image-wrap{
+    text-align: center;
+}
+.image-wrap img{
+    display: block;
+    max-width: 100%;
+    width: 20rem;
+    height: 10rem;
+    /*hình ảnh bị bóp nhỏ lại, bị méo => fix*/
+    object-fit: covert;
+    /*lấy hình ảnh từ hướng nào*/
+    object-position: top;
+    /*căn giữa*/
+    /*display: block;*/
+    margin: 0 auto;
+
+}
+
+/*Bài 28: Pseudo là gì ? Các pseudo cơ bản người mới học nên biết*/
+.pseudo:hover{
+    color: red;
+}
+.pseudo:active{
+    color: yellow;
+}
+.pseudo:visited{
+    color: #2451cf;
+}
+
+/*Bài 31: Cách làm hình nền gradient, chữ gradient trong CSS*/
+.box-gradient{
+    background-image: linear-gradient(to right bottom , red , #2451cf);
+    /*
+    direction : 1. to right, to left, to bottom , to top
+    ,to right bottom , to left bottom , to left top, to right top , 120deg
+    2. color-1
+    3. color-2
+    */
+}
+.text-gradient{
+    background-image: linear-gradient(to right bottom , red , #2451cf);
+    display: inline-block;
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+/*Bài 32: Hiển thị 2 hình nền với background-image*/
+/*<div class="background"></div>*/
+.background{
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to right bottom , rgba(255, 119, 11, 0.16), rgba(207, 84, 0, 0.02)) , url("https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+}
+/*-- hình nền nào nằm trên thì code phía trước*/
+
+
+/*Bài 33: caniuse là gì ? Và tại sao bạn nên biết*/
+
+/*// Nếu trình duyệt hỗ trợ*/
+@supports (-webkit-background-clip: text) {
+    .text-gradient{
+        background-image: linear-gradient(to right bottom , red , #2451cf);
+        display: inline-block;
+        color: transparent;
+        -webkit-background-clip: text;
+    }
+}
+/*// Nếu trình duyệt không hỗ trợ*/
+
+@supports not (-webkit-background-clip: text) {
+    .text-gradient{
+
+    }
+}
+
+/*Bài 34: Sự khác nhau giữa 3 thuộc tính opacity: 0, display:none, visibility:hidden*/
+
+
+.box{
+    /*-- vẫn chiếm diện thích và có thể nhấn vào được*/
+    opacity: 0;
+    /*-- vẫn chiếm diện tích và không nhấn vào được*/
+    visibility: hidden;
+    /*không chiếm diện tích và không nhấn vào được*/
+    display: none;
+}
+
+/*Bài 35: Tìm hiểu về shadow trong CSS*/
