@@ -33,7 +33,7 @@
     width: 20rem;
     height: 10rem;
     /*hình ảnh bị bóp nhỏ lại, bị méo => fix*/
-    object-fit: covert;
+    object-fit: cover;
     /*lấy hình ảnh từ hướng nào*/
     object-position: top;
     /*căn giữa*/
